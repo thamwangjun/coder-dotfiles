@@ -1,0 +1,5 @@
+[user]
+	name = Tham Wang Jun
+	email = 6513021+thamwangjun@users.noreply.github.com
+[credential]
+	helper = store --file ~/.my-credentials
