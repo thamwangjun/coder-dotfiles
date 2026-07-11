@@ -1,3 +1,16 @@
 # /usr/bin/env sh
 
+mkdir -p ~/.claude
+
+echo "Installing thamw/gsd-core main"
+git clone https://git.tham.one/thamw/gsd-core.git installation
+cd installation
+git checkout main
+npm install
+npm run build
+npm run build:hooks
+npm run build:lib
+node bin/install.js --global --claude --only-claude
+echo "Installation thamw/gsd-core main DONE!"
+
 echo "~/personalize done!"
