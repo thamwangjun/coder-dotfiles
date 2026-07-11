@@ -1,6 +1,11 @@
 # /usr/bin/env sh
 
 mkdir -p ~/.claude
+mkdir -p ~/.gsd
+
+cp -Rf ~/.dotfiles-origin/claude/* ~/.claude/
+cp -Rf ~/.dotfiles-origin/gsd/* ~/.gsd/
+
 
 echo "Installing thamw/gsd-core main"
 git clone https://git.tham.one/thamw/gsd-core.git installation
