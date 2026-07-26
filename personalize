@@ -1,4 +1,4 @@
-# /usr/bin/env sh
+#!/usr/bin/env sh
 
 mkdir -p ~/.claude
 mkdir -p ~/.gsd
@@ -6,14 +6,18 @@ mkdir -p ~/.gsd
 cp -Rf ~/.dotfiles-origin/claude/* ~/.claude/
 cp -Rf ~/.dotfiles-origin/gsd/* ~/.gsd/
 
-
-echo "Installing thamw/gsd-core main"
-git clone https://git.tham.one/thamw/gsd-core.git ~/installation
+if [ ! -d ~/installation ]; then
+  echo "Installing thamw/get-stuff-done main"
+  git clone https://git.tham.one/thamw/get-stuff-done.git ~/installation
+else
+  echo "thamw/get-stuff-done already present, pulling latest"
+fi
 cd ~/installation
 git checkout main
+git pull
 npm install
 npm run build
-node bin/install.js --global --claude --only-claude
+node bin/install.js --global --claude
 echo "Installation thamw/gsd-core main DONE!"
 cd
 
