@@ -8,14 +8,13 @@ cp -Rf ~/.dotfiles-origin/gsd/* ~/.gsd/
 
 
 echo "Installing thamw/gsd-core main"
-git clone https://git.tham.one/thamw/gsd-core.git installation
-cd installation
+git clone https://git.tham.one/thamw/gsd-core.git ~/installation
+cd ~/installation
 git checkout main
 npm install
 npm run build
-npm run build:hooks
-npm run build:lib
 node bin/install.js --global --claude --only-claude
 echo "Installation thamw/gsd-core main DONE!"
+cd
 
 echo "~/personalize done!"
