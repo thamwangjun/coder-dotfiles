@@ -3,8 +3,8 @@
 mkdir -p ~/.claude
 mkdir -p ~/.gsd
 
-cp -Rf ~/.dotfiles-origin/claude/* ~/.claude/
-cp -Rf ~/.dotfiles-origin/gsd/* ~/.gsd/
+cp -Rf ~/.thamw/claude/* ~/.claude/
+cp -Rf ~/.thamw/gsd/* ~/.gsd/
 
 if [ ! -d ~/installation ]; then
   echo "Installing thamw/get-stuff-done main"
@@ -12,7 +12,7 @@ if [ ! -d ~/installation ]; then
 else
   echo "thamw/get-stuff-done already present, pulling latest"
 fi
-cd ~/installation
+cd ~/installation || echo "Cannot cd into ~/installation!"
 git checkout main
 git pull
 npm install
